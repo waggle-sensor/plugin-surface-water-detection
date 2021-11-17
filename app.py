@@ -145,15 +145,15 @@ def run(args):
         sampling_countdown = args.sampling_interval
 
     # print("Cloud cover estimation starts...")
-    camera = Camera(args.stream)
-    # camera = Camera()
+    #camera = Camera(args.stream)
+    camera = Camera()
     while True:
-        sample = camera.snapshot()
-        image = sample.data
-        timestamp = sample.timestamp
-        # image = cv2.imread('test4.jpg')
-        # image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        # timestamp = time.time()
+        #sample = camera.snapshot()
+        #image = sample.data
+        #timestamp = sample.timestamp
+        image = cv2.imread('nature-bird-people-grass.jpg')
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        timestamp = time.time()
 
         if args.debug:
             s = time.time()
@@ -161,21 +161,23 @@ def run(args):
 
 
         # Inference
-        image = cv2.imread(image_path, cv2.IMREAD_COLOR)
         image, raw_image = preprocessing(image, device, CONFIG)
         labelmap = inference(model, image, raw_image, postprocessor)
         labels = np.unique(labelmap)
 
 
         outputclasses = [classes[i] for i in labels]
+        value = 'false'
+        if 'water-other' in outputclasses or 'river' in outputclasses:
+            value = 'true'
 
 
         if args.debug:
             e = time.time()
             print(f'Time elapsed for inferencing: {e-s} seconds')
 
-        plugin.publish(TOPIC_WATERDETECTOR, outputclasses, timestamp=timestamp)
-        print(f"Cloud coverage: {outputclasses} at time: {timestamp}")
+        plugin.publish(TOPIC_WATERDETECTOR, value, timestamp=timestamp)
+        print(f"Cloud coverage: {value} at time: {timestamp}")
 
         if sampling_countdown > 0:
             sampling_countdown -= 1
