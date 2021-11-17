@@ -1,4 +1,4 @@
-name: "water detector"
+name: "waterdetector"
 description: "Water Detector"
 version : "0.0.0"
 namespace: "sage"
