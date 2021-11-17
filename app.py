@@ -152,18 +152,18 @@ def run(args):
         sampling_countdown = args.sampling_interval
 
     # print("Cloud cover estimation starts...")
-    #camera = Camera(args.stream)
-    camera = Camera()
+    camera = Camera(args.stream)
+    #camera = Camera()
     while True:
         logtimestamp = time.time()
         plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Loading an Image', timestamp=logtimestamp)
         print(f"Loading an Image at time: {logtimestamp}")
-        #sample = camera.snapshot()
-        #image = sample.data
-        #timestamp = sample.timestamp
-        image = cv2.imread('nature-bird-people-grass.jpg')
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        timestamp = time.time()
+        sample = camera.snapshot()
+        image = sample.data
+        timestamp = sample.timestamp
+        #image = cv2.imread('nature-bird-people-grass.jpg')
+        #image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        #timestamp = time.time()
         logtimestampe = time.time()
         plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Image Loaded', timestamp=logtimestamp)
         print(f"Image Loaded at time: {logtimestamp}")
