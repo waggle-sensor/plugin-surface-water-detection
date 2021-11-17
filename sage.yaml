@@ -1,0 +1,28 @@
+name: "water detector"
+description: "Water Detector"
+version : "0.0.0"
+namespace: "sage"
+authors: "Seongha Park <seongha.park@anl.gov>"
+license: "MIT license"
+homepage: "https://github.com/waggle-sensor/plugin-water-detector.git"
+keywords: "machine learning, coco-stuff, image segmentation, water detection"
+source:
+  architectures :
+    - "linux/arm64"
+  url: "https://github.com/nconrad/plugin-water-detector.git"
+  build_args:
+    SAGE_STORE_URL: "https://osn.sagecontinuum.org"
+    BUCKET_ID_MODEL: "a42a4a21-f7ac-4a7c-ba76-325595637eee"
+inputs:
+  - id: "interval"
+    type: "int"
+  - id: "sampling-interval"
+    type: "int"
+  - id: "config-path"
+    type: "string"
+  - id: "model-path"
+    type: "string"
+  - id: "cuda"
+    type: "boolean"
+  - id: "crf"
+    type: "boolean"
