@@ -125,6 +125,11 @@ def run(args):
     classes = get_classtable(CONFIG)
     postprocessor = setup_postprocessor(CONFIG) if crf else None
 
+
+    logtimestamp = time.time()
+    plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Loading Model', timestamp=logtimestamp)
+    print(f"Loading Model at time: {logtimestamp}")
+
     model = eval(CONFIG.MODEL.NAME)(n_classes=CONFIG.DATASET.N_CLASSES)
     state_dict = torch.load(model_path, map_location=lambda storage, loc: storage)
     model.load_state_dict(state_dict)
@@ -133,7 +138,9 @@ def run(args):
     print("Model:", CONFIG.MODEL.NAME)
 
 
-
+    logtimestamp = time.time()
+    plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Model Loaded', timestamp=logtimestamp)
+    print(f"Model Loaded at time: {logtimestamp}")
 
 
 
@@ -148,23 +155,34 @@ def run(args):
     #camera = Camera(args.stream)
     camera = Camera()
     while True:
+        logtimestamp = time.time()
+        plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Loading an Image', timestamp=logtimestamp)
+        print(f"Loading an Image at time: {logtimestamp}")
         #sample = camera.snapshot()
         #image = sample.data
         #timestamp = sample.timestamp
         image = cv2.imread('nature-bird-people-grass.jpg')
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         timestamp = time.time()
+        logtimestampe = time.time()
+        plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Image Loaded', timestamp=logtimestamp)
+        print(f"Image Loaded at time: {logtimestamp}")
 
         if args.debug:
             s = time.time()
 
 
-
+        logtimestamp = time.time()
+        plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Starting Inference', timestamp=logtimestamp)
+        print(f"Starting Inference at time: {logtimestamp}")
         # Inference
         image, raw_image = preprocessing(image, device, CONFIG)
         labelmap = inference(model, image, raw_image, postprocessor)
         labels = np.unique(labelmap)
 
+        logtimestamp = time.time()
+        plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Inference Ended', timestamp=logtimestamp)
+        print(f"Inference Ended at time: {logtimestamp}")
 
         outputclasses = [classes[i] for i in labels]
         value = 'false'
@@ -177,7 +195,7 @@ def run(args):
             print(f'Time elapsed for inferencing: {e-s} seconds')
 
         plugin.publish(TOPIC_WATERDETECTOR, value, timestamp=timestamp)
-        print(f"Cloud coverage: {value} at time: {timestamp}")
+        print(f"Water Detector {value} at time: {timestamp}")
 
         if sampling_countdown > 0:
             sampling_countdown -= 1
@@ -191,7 +209,9 @@ def run(args):
         if args.interval > 0:
             time.sleep(args.interval)
 
-
+        logtimestamp = time.time()
+        plugin.publish(TOPIC_WATERDETECTOR, 'Water Detector: Ending Plugin', timestamp=logtimestamp)
+        print(f"Ending Plugin at time: {timestamp}")
         exit(0)
 
 
