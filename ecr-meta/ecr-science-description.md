@@ -1,7 +1,8 @@
-#Science:
+# Science
+
 This application detects the existence of water (river and other forms of water). This code runs a DeepLab v2 [1] model with a ResNet 101 backbone that is trained with COCO-Stuff [2] dataset. The COCO-Stuff dataset is designed to segment things (person, vehicle, table and others) and stuff (river, window, sea, water and others). The model is trained for both things and stuff, but we are only focusing on to determine if there is water or not. In this situation, the water includes rivers, ponds, and lakes.
 
-#AI at Edge:
+# AI at Edge:
 This code runs a DeepLab v2 [1] model with a ResNet 101 backbone that is trained with COCO-Stuff [2] dataset. In each run it takes an image from a street view camera and outputs if there is water or not. 
 
 # Using the code
