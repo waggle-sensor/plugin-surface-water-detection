@@ -1,10 +1,7 @@
 # DeepLab with PyTorch
 
-This is an unofficial **PyTorch** implementation of **DeepLab v2** [[1](##references)] with a **ResNet-101** backbone. 
-* **COCO-Stuff** dataset [[2](##references)] and **PASCAL VOC** dataset [[3]()] are supported.
-* The official Caffe weights provided by the authors can be used without building the Caffe APIs.
-* DeepLab v3/v3+ models with the identical backbone are also included (not tested).
-* [```torch.hub``` is supported](#torchhub).
+This is an **PyTorch** implementation of **DeepLab v2** [[1](##references)] with a **ResNet-101** backbone. 
+* **COCO-Stuff** dataset [[2](##references)] is supported.
 
 ## Performance
 
@@ -22,36 +19,6 @@ This is an unofficial **PyTorch** implementation of **DeepLab v2** [[1](##refere
         <th>Mean IoU</th>
         <th>FreqW IoU</th>
     </tr>
-    <tr>
-        <td rowspan="3">
-            10k <i>train</i> &dagger;
-        </td>
-        <td rowspan="3">10k <i>val</i> &dagger;</td>
-        <td>Official [<a href="#references">2</a>]</td>
-        <td></td>
-        <td></td>
-        <td><strong>65.1</strong></td>
-        <td><strong>45.5</strong></td>
-        <td><strong>34.4</strong></td>
-        <td><strong>50.4</strong></td>
-    </tr>
-    <tr>
-        <td rowspan="2"><strong>This repo</strong></td>
-        <td rowspan="2"><a href="https://github.com/kazuto1011/deeplab-pytorch/releases/download/v1.0/deeplabv2_resnet101_msc-cocostuff10k-20000.pth">Download</a></td>
-        <td></td>
-        <td><strong>65.8</td>
-        <td><strong>45.7</strong></td>
-        <td><strong>34.8</strong></td>
-        <td><strong>51.2</strong></td>
-    </tr>
-    <tr>
-        <td>&#10003;</td>
-        <td>67.1</td>
-        <td>46.4</td>
-        <td>35.6</td>
-        <td>52.5</td>
-    </tr>
-    <tr>
         <td rowspan="2">
             164k <i>train</i>
         </td>

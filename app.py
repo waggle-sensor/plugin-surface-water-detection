@@ -236,10 +236,6 @@ if __name__ == '__main__':
         action='store', default=-1, type=int,
         help='Sampling interval between inferencing')
     parser.add_argument(
-        '-threshold', dest='threshold',
-        action='store', default=0.9, type=float,
-        help='Cloud pixel determination threshold')
-    parser.add_argument(
         '-config-path', dest='config_path',
         action='store', required=True, type=str,
         help='Dataset configuration file in YAML')
