@@ -1,3 +1,7 @@
+Author:   Kazuto Nakashima,
+URL:      http://kazuto1011.github.io,
+Created:  2017-10-30
+
 # DeepLab with PyTorch
 
 This is an unofficial **PyTorch** implementation of **DeepLab v2** [[1](##references)] with a **ResNet-101** backbone. 
