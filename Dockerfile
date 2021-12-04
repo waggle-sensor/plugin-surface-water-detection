@@ -7,12 +7,14 @@ COPY unet /app/unet
 COPY app.py unet_module.py image.jpg /app/
 
 ARG SAGE_STORE_URL="https://osn.sagecontinuum.org"
-ARG BUCKET_ID_MODEL="a42a4a21-f7ac-4a7c-ba76-325595637eee"
+ARG BUCKET_ID_MODEL="3562bef2-735b-4a98-8b13-2206644bdb8e"
 
 ENV SAGE_STORE_URL=${SAGE_STORE_URL} \
     BUCKET_ID_MODEL=${BUCKET_ID_MODEL}
 
-RUN sage-cli.py storage files download ${BUCKET_ID_MODEL} CP_epoch228a.pth --target /app/wagglecloud_unet_300.pth
+RUN sage-cli.py storage files download ${BUCKET_ID_MODEL} tt_classifier_1fps.model --target /app/tt_classifier_1fps.model
+RUN sage-cli.py storage files download ${BUCKET_ID_MODEL} tt_classifier_1fps.model --target /app/tt_classifier_5fps.model
+RUN sage-cli.py storage files download ${BUCKET_ID_MODEL} tt_classifier_1fps.model --target /app/tt_classifier_50fps.model
 
 WORKDIR /app
 ENTRYPOINT ["python3", "-u", "/app/app.py"]
