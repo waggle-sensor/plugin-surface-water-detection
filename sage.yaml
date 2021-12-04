@@ -12,7 +12,7 @@ source:
   url: "https://github.com/nconrad/plugin-water-detector.git"
   build_args:
     SAGE_STORE_URL: "https://osn.sagecontinuum.org"
-    BUCKET_ID_MODEL: "a42a4a21-f7ac-4a7c-ba76-325595637eee"
+    BUCKET_ID_MODEL: "3562bef2-735b-4a98-8b13-2206644bdb8e"
 inputs:
   - id: "interval"
     type: "int"
