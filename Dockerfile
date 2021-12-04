@@ -3,7 +3,6 @@ FROM waggle/plugin-base:1.1.1-ml-cuda10.2-l4t
 COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r /app/requirements.txt
 
-COPY unet /app/unet
 COPY app.py unet_module.py image.jpg /app/
 
 ARG SAGE_STORE_URL="https://osn.sagecontinuum.org"
