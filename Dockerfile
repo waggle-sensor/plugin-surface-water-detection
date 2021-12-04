@@ -3,7 +3,7 @@ FROM waggle/plugin-base:1.1.1-ml-cuda10.2-l4t
 COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r /app/requirements.txt
 
-COPY lib /app/lib
+COPY libs /app/libs
 COPY configs /app/configs
 COPY data /app/data
 COPY app.py convert.py demo.py hubconf.py main.py /app/
