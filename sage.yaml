@@ -6,6 +6,8 @@ authors: "Seongha Park <seongha.park@anl.gov>"
 license: "MIT license"
 homepage: "https://github.com/waggle-sensor/plugin-water-detector.git"
 keywords: "machine learning, coco-stuff, image segmentation, water detection"
+funding: "NSF 1935984"
+collaborators: "Bhupendra Raut, Dario Dematties Reyes, Joseph Swantek, Neal Conrad, Nicola Ferrier, Pete Beckman, Raj Sankaran, Robert Jackson, Scott Collis, Sean Shahkarami, Seongha Park, Sergey Shemyakin, Wolfgang Gerlach, Yongho kim"
 source:
   architectures :
     - "linux/arm64"
