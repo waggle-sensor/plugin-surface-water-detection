@@ -22,6 +22,9 @@ Model loading time:
    '-cuda': Use CUDA (default = True)  
    '-crf': Use CRF post-processing (default = True)  
 
+# Ontology:
+The code publishes measurements with toptic ‘env.detector.water’. Value for a topic indicates if there is water (1, True) or not (0, False).
+
 # Reference
 [1] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. IEEE TPAMI, 2018.  
 [2] H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In CVPR, 2018.
