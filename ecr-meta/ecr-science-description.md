@@ -6,12 +6,12 @@ This application detects the existence of water (river and other forms of water)
 This code runs a DeepLab v2 [1] model with a ResNet 101 backbone that is trained with COCO-Stuff [2] dataset. In each run it takes an image from a street view camera and outputs if there is water or not. 
 
 # Using the code
-Output: Boolean water existence report (0/1)
-Input: an image (1/30 second)
-Image resolution:
-Inference time:
-Model loading time:
+Output: Boolean water existence report (0/1)  
+Input: an image (1/30 second)  
+Image resolution:  
+Inference time:  
+Model loading time:  
 
 # Reference
-[1] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. IEEE TPAMI, 2018.
+[1] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. IEEE TPAMI, 2018.  
 [2] H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In CVPR, 2018.
