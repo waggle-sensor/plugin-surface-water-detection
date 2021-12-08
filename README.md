@@ -71,3 +71,9 @@ paper](https://arxiv.org/abs/1606.00915)
 Classes (VOC) Challenge. *IJCV*, 2010.<br>
 [Project](http://host.robots.ox.ac.uk/pascal/VOC) /
 [Paper](http://host.robots.ox.ac.uk/pascal/VOC/pubs/everingham10.pdf)
+
+## funding
+[NSF 1935984](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1935984)
+
+## collaborators
+Bhupendra Raut, Dario Dematties Reyes, Joseph Swantek, Neal Conrad, Nicola Ferrier, Pete Beckman, Raj Sankaran, Robert Jackson, Scott Collis, Sean Shahkarami, Sergey Shemyakin, Wolfgang Gerlach, Yongho kim
