@@ -12,6 +12,16 @@ Image resolution:
 Inference time:  
 Model loading time:  
 
+# Arguments
+   '-debug': Debug flag  
+   '-stream': ID or name of a stream, e.g. top-camera  
+   '-interval': Inference interval in seconds (default = 0, as soon as the plugin can get image)  
+   '-sampling-interval': Sampling interval between inferencing (default = -1, no sampling)  
+   '-config-path':  Dataset configuration file in YAML  
+   '-model-path': PyTorch model to be loaded  
+   '-cuda': Use CUDA (default = True)  
+   '-crf': Use CRF post-processing (default = True)  
+
 # Reference
 [1] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. IEEE TPAMI, 2018.  
 [2] H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In CVPR, 2018.
