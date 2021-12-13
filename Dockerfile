@@ -1,4 +1,4 @@
-FROM waggle/plugin-base:1.1.1-base
+FROM waggle/plugin-base:1.1.1-base-ml
 
 COPY requirements.txt /app/
 RUN pip3 install --no-cache-dir -r /app/requirements.txt
