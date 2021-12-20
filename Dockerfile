@@ -1,6 +1,14 @@
 FROM waggle/plugin-base:1.1.1-ml-cuda10.2-l4t
 
+RUN apt-get update \
+  && apt-get install -y \
+  build-essential \
+  python3-dev \
+  libeigen3-dev \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt /app/
+RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir --force -r /app/requirements.txt
 
 COPY libs /app/libs
