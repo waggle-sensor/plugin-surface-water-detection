@@ -1,7 +1,7 @@
 FROM waggle/plugin-base:1.1.1-ml-cuda10.2-l4t
 
 COPY requirements.txt /app/
-RUN pip3 install --no-cache-dir -r /app/requirements.txt
+RUN pip3 install --no-cache-dir --force -r /app/requirements.txt
 
 COPY libs /app/libs
 COPY configs /app/configs
