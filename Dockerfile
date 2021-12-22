@@ -9,7 +9,7 @@ RUN apt-get update \
 
 COPY requirements.txt /app/
 RUN pip3 install --upgrade pip
-# RUN pip3 install --ignore-installed PyYAML
+RUN pip3 install --ignore-installed PyYAML
 RUN pip3 install --no-cache-dir --force -r /app/requirements.txt
 
 COPY libs /app/libs
