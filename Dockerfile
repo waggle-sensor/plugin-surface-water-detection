@@ -7,6 +7,7 @@ RUN apt-get update \
   libeigen3-dev \
   && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update
 RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 COPY requirements.txt /app/
