@@ -1,4 +1,4 @@
-omegaconf
+#omegaconf
 ##pydensecrf
 #git+https://github.com/lucasb-eyer/pydensecrf.git
 git+https://github.com/sagecontinuum/sage-cli.git
