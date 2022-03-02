@@ -25,6 +25,25 @@ Model loading time:
 # Ontology:
 The code publishes measurements with toptic ‘env.detector.water’. Value for a topic indicates if there is water (1, True) or not (0, False).
 
+# Inference from Sage codes
+To query the output from the plugin, you can do with python library 'sage_data_client':
+```
+import sage_data_client
+
+# query and load data into pandas data frame
+df = sage_data_client.query(
+    start="-1h",
+    filter={
+        "name": "env.detector.water",
+    }
+)
+
+# print results in data frame
+print(df)
+```
+For more information, please see [Access and use data documentation](https://docs.sagecontinuum.org/docs/tutorials/accessing-data) and [sage_data_client](https://pypi.org/project/sage-data-client/).
+
+
 # Reference
 [1] L.-C. Chen, G. Papandreou, I. Kokkinos, K. Murphy, A. L. Yuille. DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs. IEEE TPAMI, 2018.  
 [2] H. Caesar, J. Uijlings, V. Ferrari. COCO-Stuff: Thing and Stuff Classes in Context. In CVPR, 2018.
