@@ -1,6 +1,6 @@
 name: "surface-water-detection"
 description: "Surface Water Detection"
-version : "0.0.0"
+version : "0.0.5"
 namespace: "sage"
 authors: "Seongha Park <seongha.park@anl.gov>"
 license: "MIT license"
