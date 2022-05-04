@@ -159,8 +159,8 @@ def single(config_path, model_path, image_path, cuda, crf):
     labels = np.unique(labelmap)
 
     # Show result for each class
-    rows = np.floor(np.sqrt(len(labels) + 1))
-    cols = np.ceil((len(labels) + 1) / rows)
+    rows = int(np.floor(np.sqrt(len(labels) + 1)))
+    cols = int(np.ceil((len(labels) + 1) / rows))
 
     plt.figure(figsize=(10, 10))
     ax = plt.subplot(rows, cols, 1)
@@ -177,7 +177,8 @@ def single(config_path, model_path, image_path, cuda, crf):
         ax.axis("off")
 
     plt.tight_layout()
-    plt.show()
+    #plt.show()
+    plt.savefig('test.png')
 
 
 @main.command()
