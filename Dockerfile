@@ -1,6 +1,8 @@
 FROM waggle/plugin-base:1.1.1-ml
 
-RUN apt-get update \
+# || true is to prevent apt-get update from failing,
+# https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
+RUN apt-get update || true \
   && apt-get install -y \
   build-essential \
   python3-dev \
