@@ -10,7 +10,8 @@ funding: "NSF 1935984"
 collaborators: "Bhupendra Raut, Dario Dematties Reyes, Joseph Swantek, Neal Conrad, Nicola Ferrier, Pete Beckman, Raj Sankaran, Robert Jackson, Scott Collis, Sean Shahkarami, Seongha Park, Sergey Shemyakin, Wolfgang Gerlach, Yongho kim"
 source:
   architectures :
-    - "linux/arm64"
+    - linux/arm64
+    - linux/amd64
   url: "https://github.com/nconrad/plugin-water-detector.git"
   build_args:
     SAGE_STORE_URL: "https://osn.sagecontinuum.org"
